@@ -1,0 +1,21 @@
+.loader-bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.loader-bar {
+  height: 10px;
+  border-radius: 999px;
+  background:
+          linear-gradient(90deg, var(--Blue-2, #0046AE) 0%, var(--Blue-5, #E4E9F1) 50%, var(--Blue-2, #0046AE) 100%);
+  background-size: 200% 100%;
+  animation: loading-gradient 3s infinite;
+}
+
+@keyframes loading-gradient {
+  0%   {background-position:-150% 0,-150% 0}
+  66%  {background-position: 250% 0,-150% 0}
+  100% {background-position: 250% 0, 250% 0}
+}

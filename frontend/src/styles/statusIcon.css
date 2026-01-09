@@ -1,0 +1,25 @@
+.icon-done {
+  color: #25A249;
+}
+.icon-in-progress {
+  color: var(--Blue-1, #23457C);
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
+}
+.icon-pending {
+  color: #697077;
+  height: 1rem;
+  width: 1rem;
+}
+
+.icon-polygon {
+  cursor: pointer;
+}
+
+.icon-polygon:hover {
+  opacity: 0.8;
+}

@@ -1,0 +1,110 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.5.3'
+	id 'io.spring.dependency-management' version '1.1.7'
+	id 'com.google.cloud.tools.jib' version '3.4.5'
+	id 'com.gorylenko.gradle-git-properties' version "2.5.2"
+	id 'org.web3j' version '4.12.3'
+}
+
+group = 'it.bocconi'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+ext {
+	awsVersion = '2.31.78'
+	awsTimestreamVersion = '2.31.78'
+	awsKmsVersion = '2.31.78'
+}
+
+repositories {
+	mavenCentral()
+}
+
+tasks.withType(org.web3j.gradle.plugin.GenerateContractWrappers).configureEach {
+	dependsOn tasks.named('processResources')
+}
+
+web3j {
+	generatedPackageName = 'it.bocconi.bledger.blockchain.smartcontract.generated'
+	generatedFilesBaseDir = 'src/'
+}
+
+clean.doLast {
+	file("src/main/java/it/bocconi/bledger/blockchain/smartcontract/").deleteDir()
+}
+
+dependencies {
+	//db
+	implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
+	runtimeOnly 'org.postgresql:postgresql'
+	runtimeOnly 'org.postgresql:r2dbc-postgresql'
+	implementation 'org.liquibase:liquibase-core'
+
+	//webflux
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+	//lombok
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+
+	// web3j
+	implementation group: 'org.web3j', name: 'core', version: '4.12.3'
+
+
+	// Apache Commons
+	implementation 'org.apache.commons:commons-lang3:3.18.0'
+	implementation 'commons-validator:commons-validator:1.10.0'
+	implementation 'org.apache.commons:commons-text:1.13.1'
+	implementation 'commons-codec:commons-codec:1.18.0'
+	implementation 'org.apache.commons:commons-csv:1.14.0'
+
+	//test
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// Apache poi
+	implementation 'org.apache.poi:poi-ooxml:5.4.1'
+
+	//Apache tika
+	implementation 'org.apache.tika:tika-core:3.2.1'
+
+	//mapstruct
+	implementation 'org.mapstruct:mapstruct:1.6.3'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.3'
+
+	//cron
+	implementation 'com.cronutils:cron-utils:9.2.1'
+
+	// AWS
+	implementation "software.amazon.awssdk:s3:${awsVersion}"
+	implementation "software.amazon.awssdk:s3-transfer-manager:${awsVersion}"
+	testImplementation 'io.findify:s3mock_2.13:0.2.6'
+	implementation "software.amazon.awssdk:sns:${awsVersion}"
+	implementation "software.amazon.awssdk:timestreamwrite:${awsTimestreamVersion}"
+	implementation "software.amazon.awssdk:timestreamquery:${awsTimestreamVersion}"
+	implementation "software.amazon.awssdk:kms:${awsKmsVersion}"
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+gitProperties {
+	keys = ['git.branch','git.commit.id','git.commit.time']
+	dotGitDirectory = file("${project.rootDir}/../.git")
+}

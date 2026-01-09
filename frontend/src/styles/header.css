@@ -1,0 +1,162 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+  font-family: var(--font-default), sans-serif;
+
+  position: sticky;
+  z-index: 10;
+  top: 0;
+}
+
+.logo {
+  font-weight: 500;
+  font-family: var(--font-heading), serif;
+  color: #003B78;
+  display: flex;
+  align-items: baseline; /* 👈 This fixes vertical alignment */
+  cursor: pointer;
+  gap: 0;
+  font-size: 2.34969rem;
+  line-height: 1.79488rem;
+}
+
+.logo em {
+  color: #224993;
+  font-family: Playfair, serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list li {
+  color: #666;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-list li.active {
+  color: var(--Blue-2, #0046AE);
+  font-weight: 500;
+  text-decoration: underline;
+
+  .nav-bar-link {
+    color: var(--Blue-2, #0046AE);
+  }
+}
+
+.nav-bar-link {
+  color: var(--Grey-1, #54585C);
+
+  /* inter/regular/p */
+  font-family: var(--font-default), sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem; /* 150% */
+
+  &:hover {
+    color: var(--Blue-2, #0046AE);
+    background: transparent;
+  }
+}
+
+.logout-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  align-items: center;
+}
+
+.logout-company {
+  font-size: 1rem;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: auto;
+  order: 1;
+}
+
+.hamburger svg {
+  fill: #666;
+}
+
+.hamburger:hover svg {
+  fill: var(--Blue-2, #0046AE);
+}
+
+.logout-mobile {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 1rem;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-center {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+
+  .nav-center.open {
+    display: flex;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .nav-list li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .logout {
+    display: none;
+  }
+
+  .logout-mobile {
+    display: block;
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: center;
+  }
+}

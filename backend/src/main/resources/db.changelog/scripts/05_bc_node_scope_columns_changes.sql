@@ -1,0 +1,5 @@
+ALTER TABLE bc_node
+  ALTER COLUMN scope1 TYPE VARCHAR(255),
+  ALTER COLUMN scope2 TYPE VARCHAR(255),
+  DROP COLUMN scope3,
+  ADD COLUMN total_scope1_and_scope2 VARCHAR(255);

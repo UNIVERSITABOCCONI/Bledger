@@ -1,0 +1,21 @@
+.vSpacer {
+  display: block;
+  width: 100%;
+  height: 0.5rem;
+
+  &.vSpacer--xs {
+    height: 0.5rem;
+  }
+  &.vSpacer--sm {
+    height: 1rem;
+  }
+  &.vSpacer--md {
+    height: 1.5rem;
+  }
+  &.vSpacer--lg {
+    height: 2rem;
+  }
+  &.vSpacer--xl {
+    height: 2.5rem;
+  }
+}

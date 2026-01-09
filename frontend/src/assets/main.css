@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300..900&family=Playfair+Display:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+
+
+@import 'variables.css';
+@import 'reset.css';
+@import 'grid.css';
+@import 'forms.css';
+@import 'typography.css';
+
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: var(--font-default), sans-serif;
+  font-size: 1rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.main {
+  min-height: calc(100vh - 90px);
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-inline: 2rem;
+  padding-top: 2rem;
+  padding-bottom: calc(90px + 2rem);
+  position: relative;
+  z-index: 1;
+}
+
+p {
+  margin-bottom: 0.75rem;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading), serif;
+}
+
+.background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+#app {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+  position: relative;
+  background: transparent;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.note {
+  color: var(--Bocconi-Black, #000);
+
+  /* inter/bold/label */
+  font-family: var(--font-default), sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.3125rem; /* 150% */
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    /*display: grid;
+    grid-template-columns: 1fr 1fr;*/
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 0;
+  }
+}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);border:0}

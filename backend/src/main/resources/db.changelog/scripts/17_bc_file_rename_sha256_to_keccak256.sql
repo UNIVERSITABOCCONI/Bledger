@@ -1,0 +1,2 @@
+ALTER TABLE bc_file
+    RENAME COLUMN sha256 TO keccak256;

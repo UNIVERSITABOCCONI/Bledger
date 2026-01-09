@@ -1,0 +1,347 @@
+.organigram__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+
+  .action-bar + & {
+    overflow-x: auto;
+    padding-inline: 2rem;
+  }
+}
+
+.organigram__label__container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.organigram__children::before {
+  content: ' ';
+  border-left: 1px solid var(--Blue-2);
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  height: 1rem;
+}
+
+.organigram__container--root > .organigram__children::before {
+  display: none;
+}
+
+.organigram__container--root > .organigram__children > .organigram__container::before {
+  display: none;
+}
+
+
+.organigram__children--multi::before {
+  content: ' ';
+  border-left: 1px solid var(--Blue-2);
+  border-bottom: 1px solid var(--Blue-2);
+  position: absolute;
+  height: 1rem;
+  top: -2rem;
+  left: 50%;
+  box-sizing: border-box;
+}
+
+.organigram__label {
+  position: relative;
+}
+
+/* fix to extend hoverable organigram__label area */
+.organigram__label:hover::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -5px;
+  bottom: -30px;
+  left: 0;
+  right: -30px;
+}
+
+.organigram__children__wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.organigram-wrapper {
+  position: relative;
+  overflow: scroll;
+  height: 100%;
+  width: 100%;
+  min-height: 700px;
+  justify-content: center;
+}
+
+.organigram__children {
+  position: relative;
+  display: flex;
+  gap: 2.5rem;
+}
+
+.organigram__container--root > .organigram__children::after {
+  display: none;
+}
+
+.organigram__container.organigram__container--root::before {
+  display: none;
+}
+
+.organigram__container:first-child::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateY(-100%);
+  border-left: 1px solid var(--Blue-2);
+  border-top: 1px solid var(--Blue-2);
+  height: 1rem;
+  width: calc(50% + 2.5rem);
+}
+
+.organigram__container:not(:last-child):not(:first-child)::before {
+  content: "";
+  position: absolute;
+  transform: translateY(-100%);
+  border: none;
+  border-top: 1px solid var(--Blue-2);
+  height: 1rem;
+  width: calc(100% + 2.5rem);
+}
+
+.organigram__container:not(:last-child):not(:first-child)::after {
+  content: "";
+  position: absolute;
+  border: none;
+  left: 50%;
+  border-left: 1px solid var(--Blue-2);
+  transform: translateY(-100%);
+  width: calc(100% + 2.5rem);
+  height: 1rem;
+}
+
+.organigram__container:last-child::before {
+  content: "";
+  position: absolute;
+  border-right: 1px solid var(--Blue-2);
+  border-top: 1px solid var(--Blue-2);
+  border-left: none;
+  width: calc(50% + 2.5rem);
+  height: 1rem;
+  right: 50%;
+  transform: translateY(-100%);
+}
+
+.organigram__container:only-child::before {
+  width: 0 !important;
+}
+
+.organigram__add_level {
+  width: 100%;
+  visibility: hidden;
+  transition: all;
+  transform: translateY(-1rem);
+
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1.0625rem;
+
+  border: none!important;
+  border-radius: 1rem;
+  background: var(--Blue-5, #E4E9F1);
+  box-shadow: 0 0 30.6px 0 rgba(0, 0, 0, 0.11);
+
+  color: var(--Blue-2, #0046AE);
+  text-align: center;
+
+  /* inter/regular/p */
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem; /* 150% */
+
+  max-width: 19.125rem;
+
+  svg {
+    height: 1.125rem;
+  }
+
+  &.show {
+    visibility: visible;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+}
+
+.organigram__add_sibling {
+  position: absolute;
+  z-index: 100;
+  inset-block: 0;
+  right: 0.6rem;
+  border-radius: 1rem;
+  border: none;
+  visibility: hidden;
+  transition: all;
+  background-color: var(--Blue-5, #E4E9F1);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  transform: translateX(calc(100% + 1rem));
+  padding: 0.25rem;
+  height: 32px;
+
+  svg {
+    height: 1rem;
+  }
+
+  &:hover {
+    color: var(--Blue-2, #0046AE);
+  }
+
+  &.show {
+    position: relative;
+    visibility: visible;
+    transform: none;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    color: var(--Blue-2, #0046AE);
+  }
+}
+
+.organigram__label:hover > .organigram__add_sibling, .organigram__label:focus > .organigram__add_sibling {
+  visibility: visible;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.organigram__container:hover > .organigram__add_level, .organigram__container:focus > .organigram__add_level {
+  visibility: visible;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.organigram__rename_node {
+  visibility: hidden;
+  transition: all;
+
+  &:hover {
+    background-color: var(--Bocconi-White, #fff);
+    color: var(--color-primary);
+  }
+}
+
+.organigram__label:hover > .organigram__rename_node, .organigram__label:focus > .organigram__rename_node {
+  visibility: visible;
+}
+
+
+.organigram__level_label {
+  display: inline-flex;
+  padding: 0.08394rem 0.83931rem 0.16788rem 0.83931rem;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--Blue-2, #0046AE);
+  text-align: center;
+
+  /* inter/regular/H6 */
+  font-family: Inter, sans-serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.875rem; /* 150% */
+}
+
+
+.organigram__remove {
+  position: absolute;
+  z-index: 100;
+  inset-block: 0;
+  border-radius: 20px;
+  left: -3rem;
+  top: 1.2rem;
+  border: none;
+  visibility: hidden;
+  transition: all;
+  background-color: var(--Blue-5, #E4E9F1);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  transform: translateX(calc(100% + 1rem));
+  padding: 0.25rem;
+  height: 40px;
+  width: 40px;
+
+  svg {
+    height: 1rem;
+  }
+
+  &:hover {
+    color: var(--Red, #0046AE);
+  }
+
+  &.show {
+    position: relative;
+    visibility: visible;
+    transform: none;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    color: var(--Red, #0046AE);
+  }
+}
+
+.organigram__label:hover > .organigram__remove, .organigram__label:focus > .organigram__remove {
+  visibility: visible;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.organigram__move {
+  position: absolute;
+  z-index: 100;
+  inset-block: 0;
+  top: 3rem;
+  right: 0.6rem;
+  border-radius: 1rem;
+  border: none;
+  visibility: hidden;
+  transition: all;
+  background-color: var(--Blue-5, #E4E9F1);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  transform: translateX(calc(100% + 1rem));
+  padding: 0.25rem;
+  height: 1.5rem;
+
+  svg {
+    height: 1.5rem;
+  }
+
+  &:hover {
+    color: var(--Blue-2, #0046AE);
+  }
+
+  &.show {
+    position: relative;
+    visibility: visible;
+    transform: none;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    color: var(--Blue-2, #0046AE);
+  }
+}
+
+.organigram__label:hover > .organigram__move, .organigram__label:focus > .organigram__move {
+  visibility: visible;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* === Organigram layout fixes === */
+.organigram__container {
+  flex: 0 0 auto;
+  min-width: max-content;
+  width: auto;
+}
+.organigram__children {
+  display: inline-flex;
+  align-items: flex-start;
+}
+.organigram__container--root {
+  margin-inline: auto;
+  width: max-content;
+}

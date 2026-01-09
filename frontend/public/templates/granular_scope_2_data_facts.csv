@@ -1,0 +1,4 @@
+name,category,source_of_emission,unit_of_measure,quantity
+Es. 1: Bolletta elettricità,bocconi:Electricity,bocconi:GridElectricity,utr:kWh,90000
+Es. 2: Produzione propria,bocconi:Electricity,bocconi:SelfProducedRenewable,utr:kWh,160000
+Es. 3: Riscaldamento ufficio,bocconi:SteamAndHeating,bocconi:SteamAndHeatingSource,utr:kWh,15000

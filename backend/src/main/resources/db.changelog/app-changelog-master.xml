@@ -1,0 +1,31 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd"
+                   objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+
+    <!-- MAIN SCRIPTS-->
+    <include file="db.changelog/scripts/01_initial-data-model.sql" context="main"/>
+    <include file="db.changelog/scripts/02_add-table-network-auditor.sql" context="main"/>
+    <include file="db.changelog/scripts/03_add-network-tree-cache-table.sql" context="main"/>
+    <include file="db.changelog/scripts/04_node_and_file_metadata_changes.sql" context="main"/>
+    <include file="db.changelog/scripts/05_bc_node_scope_columns_changes.sql" context="main"/>
+    <include file="db.changelog/scripts/06_delete_roles_from_database.sql" context="main"/>
+    <include file="db.changelog/scripts/07_add_approval_end_date_bc_node.sql" context="main"/>
+    <include file="db.changelog/scripts/08_add_counts_to_bc_network_auditor.sql" context="main"/>
+    <include file="db.changelog/scripts/09_add_is_whitelisted_to_bc_wallet.sql" context="main"/>
+    <include file="db.changelog/scripts/10_create_table_bc_smart_contract.sql" context="main"/>
+    <include file="db.changelog/scripts/11_modify_constraint_chk_bc_wallet_type.sql" context="main"/>
+    <include file="db.changelog/scripts/12_add_token_id_to_bc_network.sql" context="main"/>
+    <include file="db.changelog/scripts/13_add_transaction_receipt_to_bc_transaction.sql" context="main"/>
+    <include file="db.changelog/scripts/14_create_table_bc_b_ledger_network_metadata.sql" context="main"/>
+    <include file="db.changelog/scripts/15_add_node_id_to_bc_transaction.sql" context="main"/>
+    <include file="db.changelog/scripts/16_add_last_export_bc_node.sql" context="main"/>
+    <include file="db.changelog/scripts/17_bc_file_rename_sha256_to_keccak256.sql" context="main"/>
+    <include file="db.changelog/scripts/18_bc_node_computing_fields.sql" context="main"/>
+    <include file="db.changelog/scripts/19_bc_node_add_last_compute_date.sql" context="main"/>
+    <include file="db.changelog/scripts/20_bc_company_drop_contraint_chk_bc_company_id_type.sql" context="main"/>
+    <include file="db.changelog/scripts/21_bc_node_last_compute_change.sql" context="main"/>
+
+    <!-- UNIT TEST SCRIPTS -->
+    <include file="db.changelog/scripts/test/01_test-data.sql" context="unit-test"/>
+</databaseChangeLog>

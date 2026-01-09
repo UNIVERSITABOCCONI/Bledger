@@ -1,0 +1,2087 @@
+{
+  "info": {
+    "_postman_id": "2a19de7a-ce05-493c-a427-80700fb2c892",
+    "name": "Bocconi Musa",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "36170648"
+  },
+  "item": [
+    {
+      "name": "Company",
+      "item": [
+        {
+          "name": "PUBLIC",
+          "item": [
+            {
+              "name": "get-company-names-by-type",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/public/company/get-company-names-by-type/TPA",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "public",
+                    "company",
+                    "get-company-names-by-type",
+                    "TPA"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "[\n  {\n    \"companyId\": \"c28ec4e5-2ba8-49c2-927c-2c6f05336f49\",\n    \"companyName\": \"Company 1\"\n  }\n]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "COMMON",
+          "item": [
+            {
+              "name": "my-company",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/common/company/my-company",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "common",
+                    "company",
+                    "my-company"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"id\": \"c28ec4e5-2ba8-49c2-927c-2c6f05336f49\",\n  \"email\": \"info@company1.example\",\n  \"nation\": \"IT\",\n  \"companyName\": \"Company 1\",\n  \"idType\": \"VAT\",\n  \"idNumber\": \"IT123456789\",\n  \"representativeName\": \"Alex\",\n  \"representativeSurname\": \"Rossi\",\n  \"walletId\": \"wallet-01\",\n  \"walletAddress\": \"0x1234567890abcdef1234567890abcdef12345678\",\n  \"companyType\": \"ORG\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "my-profile-image",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/common/company/my-profile-image",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "common",
+                    "company",
+                    "my-profile-image"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "image/png"
+                    }
+                  ],
+                  "body": "<binary>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Login",
+      "item": [
+        {
+          "name": "PUBLIC",
+          "item": [
+            {
+              "name": "LOGIN",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"companyId\": \"f75c51a5-8803-4380-9d34-1fb07d51bdcb\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/public/auth/login",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "public",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "body": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "COMMON",
+          "item": [
+            {
+              "name": "LOGOUT",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"companyId\": \"c28ec4e5-2ba8-49c2-927c-2c6f05336f49\",\r\n    \"role\": \"BUSINESS_UNIT\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/common/auth/logout",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "common",
+                    "auth",
+                    "logout"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "body": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Network",
+      "item": [
+        {
+          "name": "BU",
+          "item": [
+            {
+              "name": "my-networks-bu",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/bu/network/my-networks?page=0&size=10&sort=updated_at,desc",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bu",
+                    "network",
+                    "my-networks"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "updated_at,desc"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"content\": [\n    {\n      \"id\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n      \"networkName\": \"Network 1\",\n      \"membersCount\": 3,\n      \"nodeStatus\": \"FILE_UPLOADED\",\n      \"auditedAt\": \"2024-01-15T10:15:30\",\n      \"uploadFileTransactionId\": \"tx-upload-01\",\n      \"auditFileTransactionId\": \"tx-audit-01\"\n    }\n  ],\n  \"pageable\": {\n    \"sort\": {\n      \"empty\": true,\n      \"sorted\": false,\n      \"unsorted\": true\n    },\n    \"offset\": 0,\n    \"pageNumber\": 0,\n    \"pageSize\": 10,\n    \"paged\": true,\n    \"unpaged\": false\n  },\n  \"totalPages\": 1,\n  \"totalElements\": 1,\n  \"last\": true,\n  \"size\": 10,\n  \"number\": 0,\n  \"sort\": {\n    \"empty\": true,\n    \"sorted\": false,\n    \"unsorted\": true\n  },\n  \"numberOfElements\": 1,\n  \"first\": true,\n  \"empty\": false\n}"
+                }
+              ]
+            },
+            {
+              "name": "my-invitations",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/bu/network/my-invitations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bu",
+                    "network",
+                    "my-invitations"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"content\": [\n    {\n      \"id\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n      \"networkName\": \"Network 1\",\n      \"membersCount\": 3,\n      \"nodeStatus\": \"FILE_UPLOADED\",\n      \"auditedAt\": \"2024-01-15T10:15:30\",\n      \"uploadFileTransactionId\": \"tx-upload-01\",\n      \"auditFileTransactionId\": \"tx-audit-01\"\n    }\n  ],\n  \"pageable\": {\n    \"sort\": {\n      \"empty\": true,\n      \"sorted\": false,\n      \"unsorted\": true\n    },\n    \"offset\": 0,\n    \"pageNumber\": 0,\n    \"pageSize\": 10,\n    \"paged\": true,\n    \"unpaged\": false\n  },\n  \"totalPages\": 1,\n  \"totalElements\": 1,\n  \"last\": true,\n  \"size\": 10,\n  \"number\": 0,\n  \"sort\": {\n    \"empty\": true,\n    \"sorted\": false,\n    \"unsorted\": true\n  },\n  \"numberOfElements\": 1,\n  \"first\": true,\n  \"empty\": false\n}"
+                }
+              ]
+            },
+            {
+              "name": "details",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/bu/network/details/:networkId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bu",
+                    "network",
+                    "details",
+                    ":networkId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId",
+                      "value": "{{networkId}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"id\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n  \"networkName\": \"Network 1\",\n  \"amIAdmin\": true,\n  \"progressPercentage\": 100.0,\n  \"progressEcomputation\": 80.0,\n  \"tokenId\": 1,\n  \"smartContractAddress\": \"0xabcdef1234567890abcdef1234567890abcdef12\",\n  \"lastExport\": \"2024-01-20T12:00:00\",\n  \"lastCompute\": \"2024-01-21T12:00:00\",\n  \"lastVersionExport\": \"2024-01-20T12:00:00\",\n  \"lastVersionCompute\": \"2024-01-21T12:00:00\",\n  \"myNode\": {\n    \"id\": \"node-01\",\n    \"parentId\": \"node-00\",\n    \"companyId\": \"company-01\",\n    \"scopeFileId\": \"file-scope\",\n    \"scopeFileName\": \"scope_1_2.csv\",\n    \"granularScope1FileId\": \"file-g1\",\n    \"granularScope1FileName\": \"scope_1.csv\",\n    \"granularScope2FileId\": \"file-g2\",\n    \"granularScope2FileName\": \"scope_2.csv\",\n    \"nodeStatus\": \"AUDITED\",\n    \"audited\": true,\n    \"auditedAt\": \"2024-01-15T10:15:30\",\n    \"uploadFileTransactionId\": \"tx-upload-01\",\n    \"auditFileTransactionId\": \"tx-audit-01\",\n    \"scope1\": \"100\",\n    \"scope2\": \"200\",\n    \"totalScope1AndScope2\": \"300\",\n    \"nodeDepth\": 2,\n    \"auditorId\": \"auditor-01\",\n    \"eValue\": 12.5,\n    \"scope3\": 125.0,\n    \"productionVolume\": 10.0\n  }\n}"
+                }
+              ]
+            },
+            {
+              "name": "accept-invitation",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/bu/network/accept-invitation/:networkId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bu",
+                    "network",
+                    "accept-invitation",
+                    ":networkId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "body": ""
+                }
+              ]
+            },
+            {
+              "name": "refuse-invitation",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/bu/network/refuse-invitation/:networkId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bu",
+                    "network",
+                    "refuse-invitation",
+                    ":networkId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "body": ""
+                }
+              ]
+            },
+            {
+              "name": "get-auditors",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/bu/network/get-auditors/:networkId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bu",
+                    "network",
+                    "get-auditors",
+                    ":networkId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId",
+                      "value": "{{networkId}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "[\n  {\n    \"companyId\": \"c28ec4e5-2ba8-49c2-927c-2c6f05336f49\",\n    \"companyName\": \"Company 1\"\n  }\n]"
+                }
+              ]
+            },
+            {
+              "name": "request-audit",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"auditorId\":\"5324804b-6fdc-4e09-a8f5-eb3520c3b4c5\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/bu/network/request-audit/:networkId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bu",
+                    "network",
+                    "request-audit",
+                    ":networkId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId",
+                      "value": "{{networkId}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"auditorId\": \"auditor-01\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "get-clients",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/bu/network/get-clients/:networkId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bu",
+                    "network",
+                    "get-clients",
+                    ":networkId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId",
+                      "value": "{{networkId}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"content\": [\n    {\n      \"id\": \"node-01\",\n      \"networkId\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n      \"parentId\": \"node-00\",\n      \"parentCompanyId\": \"parent-company\",\n      \"companyId\": \"company-01\",\n      \"companyName\": \"Company 1\",\n      \"nodeDepth\": 2,\n      \"createdAt\": \"2024-01-10T09:00:00\",\n      \"updatedAt\": \"2024-01-12T10:00:00\",\n      \"nodeStatus\": \"FILE_UPLOADED\",\n      \"auditedAt\": \"2024-01-15T10:15:30\",\n      \"uploadFileTransactionId\": \"tx-upload-01\",\n      \"auditFileTransactionId\": \"tx-audit-01\",\n      \"quantity\": 12.5,\n      \"transportationEmission\": 3.2\n    }\n  ],\n  \"pageable\": {\n    \"sort\": {\n      \"empty\": true,\n      \"sorted\": false,\n      \"unsorted\": true\n    },\n    \"offset\": 0,\n    \"pageNumber\": 0,\n    \"pageSize\": 10,\n    \"paged\": true,\n    \"unpaged\": false\n  },\n  \"totalPages\": 1,\n  \"totalElements\": 1,\n  \"last\": true,\n  \"size\": 10,\n  \"number\": 0,\n  \"sort\": {\n    \"empty\": true,\n    \"sorted\": false,\n    \"unsorted\": true\n  },\n  \"numberOfElements\": 1,\n  \"first\": true,\n  \"empty\": false\n}"
+                }
+              ]
+            },
+            {
+              "name": "get-suppliers",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/bu/network/get-suppliers/:networkId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bu",
+                    "network",
+                    "get-suppliers",
+                    ":networkId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId",
+                      "value": "{{networkId}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"content\": [\n    {\n      \"id\": \"node-01\",\n      \"networkId\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n      \"parentId\": \"node-00\",\n      \"parentCompanyId\": \"parent-company\",\n      \"companyId\": \"company-01\",\n      \"companyName\": \"Company 1\",\n      \"nodeDepth\": 2,\n      \"createdAt\": \"2024-01-10T09:00:00\",\n      \"updatedAt\": \"2024-01-12T10:00:00\",\n      \"nodeStatus\": \"FILE_UPLOADED\",\n      \"auditedAt\": \"2024-01-15T10:15:30\",\n      \"uploadFileTransactionId\": \"tx-upload-01\",\n      \"auditFileTransactionId\": \"tx-audit-01\",\n      \"quantity\": 12.5,\n      \"transportationEmission\": 3.2\n    }\n  ],\n  \"pageable\": {\n    \"sort\": {\n      \"empty\": true,\n      \"sorted\": false,\n      \"unsorted\": true\n    },\n    \"offset\": 0,\n    \"pageNumber\": 0,\n    \"pageSize\": 10,\n    \"paged\": true,\n    \"unpaged\": false\n  },\n  \"totalPages\": 1,\n  \"totalElements\": 1,\n  \"last\": true,\n  \"size\": 10,\n  \"number\": 0,\n  \"sort\": {\n    \"empty\": true,\n    \"sorted\": false,\n    \"unsorted\": true\n  },\n  \"numberOfElements\": 1,\n  \"first\": true,\n  \"empty\": false\n}"
+                }
+              ]
+            },
+            {
+              "name": "network-tree-get-bu",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/bu/network/network-tree/get/:networkId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bu",
+                    "network",
+                    "network-tree",
+                    "get",
+                    ":networkId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId",
+                      "value": "{{networkId}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"id\": \"node-root\",\n  \"networkId\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n  \"parentId\": null,\n  \"parentCompanyId\": null,\n  \"companyId\": \"company-root\",\n  \"companyName\": \"Company Root\",\n  \"nodeDepth\": 0,\n  \"createdAt\": \"2024-01-10T09:00:00\",\n  \"updatedAt\": \"2024-01-12T10:00:00\",\n  \"children\": [\n    {\n      \"id\": \"node-01\",\n      \"networkId\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n      \"parentId\": \"node-root\",\n      \"parentCompanyId\": \"company-root\",\n      \"companyId\": \"company-01\",\n      \"companyName\": \"Company 1\",\n      \"nodeDepth\": 1,\n      \"createdAt\": \"2024-01-10T09:00:00\",\n      \"updatedAt\": \"2024-01-12T10:00:00\",\n      \"children\": []\n    }\n  ]\n}"
+                }
+              ]
+            },
+            {
+              "name": "request-verification",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/bu/network/request-verification/:networkId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bu",
+                    "network",
+                    "request-verification",
+                    ":networkId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId",
+                      "value": "{{networkId}}"
+                    }
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"auditorId\": \"auditor-01\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "body": ""
+                }
+              ]
+            },
+            {
+              "name": "compute-e",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/bu/network/compute-e/:networkId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bu",
+                    "network",
+                    "compute-e",
+                    ":networkId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId",
+                      "value": "{{networkId}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"value\": 12.5\n}"
+                }
+              ]
+            },
+            {
+              "name": "update-node",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/bu/network/update-node/:nodeId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bu",
+                    "network",
+                    "update-node",
+                    ":nodeId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "nodeId",
+                      "value": "{{nodeId}}"
+                    }
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"quantity\": 12.5,\n  \"transportEmissions\": 3.2\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "body": ""
+                }
+              ]
+            },
+            {
+              "name": "compute-scope3",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/bu/network/compute-scope3/:networkId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bu",
+                    "network",
+                    "compute-scope3",
+                    ":networkId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId",
+                      "value": "{{networkId}}"
+                    }
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"value\": 10.0\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"value\": 125.0\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "BNA",
+          "item": [
+            {
+              "name": "my-networks-bna",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/bna/network/my-networks?page=0&size=10&sort=updated_at,desc",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bna",
+                    "network",
+                    "my-networks"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "updated_at,desc"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"content\": [\n    {\n      \"id\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n      \"networkName\": \"Network 1\",\n      \"membersCount\": 3,\n      \"nodeStatus\": \"FILE_UPLOADED\",\n      \"auditedAt\": \"2024-01-15T10:15:30\",\n      \"uploadFileTransactionId\": \"tx-upload-01\",\n      \"auditFileTransactionId\": \"tx-audit-01\"\n    }\n  ],\n  \"pageable\": {\n    \"sort\": {\n      \"empty\": true,\n      \"sorted\": false,\n      \"unsorted\": true\n    },\n    \"offset\": 0,\n    \"pageNumber\": 0,\n    \"pageSize\": 10,\n    \"paged\": true,\n    \"unpaged\": false\n  },\n  \"totalPages\": 1,\n  \"totalElements\": 1,\n  \"last\": true,\n  \"size\": 10,\n  \"number\": 0,\n  \"sort\": {\n    \"empty\": true,\n    \"sorted\": false,\n    \"unsorted\": true\n  },\n  \"numberOfElements\": 1,\n  \"first\": true,\n  \"empty\": false\n}"
+                }
+              ]
+            },
+            {
+              "name": "create",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "// Parse the response body\r",
+                      "let response = pm.response.json();\r",
+                      "\r",
+                      "// Set the collection variable 'networkId'\r",
+                      "if (response.id) {\r",
+                      "    pm.collectionVariables.set(\"networkId\", response.id);\r",
+                      "    console.log(\"Collection variable 'networkId' set to:\", response.id);\r",
+                      "} else {\r",
+                      "    console.warn(\"No 'id' found in the response.\");\r",
+                      "}\r"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                },
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "exec": [
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"auditorIds\": [\r\n        \"3c4799cc-a158-4c45-9e1f-911e452b6edb\"\r\n    ],\r\n    \"name\": \"network-11\",\r\n    \"tree\": {\r\n        \"children\": [\r\n            {\r\n                \"children\": [\r\n                    {\r\n                        \"children\": [\r\n                        ],\r\n                        \"companyId\": \"215dbe5e-7284-42ab-8578-b1d9b15dedd2\",\r\n                        \"companyName\": \"Company 4\"\r\n                    },\r\n                    {\r\n                        \"children\": [\r\n                        ],\r\n                        \"companyId\": \"23a9f38f-fa16-40ca-b282-2b85291240ef\",\r\n                        \"companyName\": \"Company 5\"\r\n                    }\r\n                ],\r\n                \"companyId\": \"3f2c7125-5f5e-4812-b015-601bf16be931\",\r\n                \"companyName\": \"Company 2\"\r\n            },\r\n            {\r\n                \"children\": [\r\n                    {\r\n                        \"children\": [\r\n                        ],\r\n                        \"companyId\": \"5bb4ced3-39ef-4112-aaaf-da47a2e76f12\",\r\n                        \"companyName\": \"Company 6\"\r\n                    },\r\n                    {\r\n                        \"children\": [\r\n                        ],\r\n                        \"companyId\": \"7c3f4e31-0a8c-4bcb-b701-1302e6846afb\",\r\n                        \"companyName\": \"Company 7\"\r\n                    }\r\n                ],\r\n                \"companyId\": \"d9c75185-fd2f-4cef-899c-d2f7db017c16\",\r\n                \"companyName\": \"Company 3\"\r\n            }\r\n        ],\r\n        \"companyId\": \"c8fcd1aa-8133-4903-afb1-a1c80f829207\",\r\n        \"companyName\": \"Company 1\"\r\n    }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/bna/network/create",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bna",
+                    "network",
+                    "create"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"transactionId\": \"tx-create-01\",\n  \"content\": {\n    \"id\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n    \"rootId\": \"node-root\",\n    \"networkName\": \"Network 1\",\n    \"networkAdminId\": \"company-root\",\n    \"membersCount\": 3,\n    \"uploadedCount\": 0,\n    \"auditedCount\": 0,\n    \"tree\": {\n      \"id\": \"node-root\",\n      \"networkId\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n      \"parentId\": null,\n      \"parentCompanyId\": null,\n      \"companyId\": \"company-root\",\n      \"companyName\": \"Company Root\",\n      \"nodeDepth\": 0,\n      \"createdAt\": \"2024-01-10T09:00:00\",\n      \"updatedAt\": \"2024-01-12T10:00:00\",\n      \"children\": [\n        {\n          \"id\": \"node-01\",\n          \"networkId\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n          \"parentId\": \"node-root\",\n          \"parentCompanyId\": \"company-root\",\n          \"companyId\": \"company-01\",\n          \"companyName\": \"Company 1\",\n          \"nodeDepth\": 1,\n          \"createdAt\": \"2024-01-10T09:00:00\",\n          \"updatedAt\": \"2024-01-12T10:00:00\",\n          \"children\": []\n        }\n      ]\n    }\n  }\n}"
+                }
+              ]
+            },
+            {
+              "name": "add-auditors (PUT)",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"auditorIds\": [\n    \"7bc5531d-5404-441b-b7b2-ae124547c7b1\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/bna/network/add-auditors/:networkId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bna",
+                    "network",
+                    "add-auditors",
+                    ":networkId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId",
+                      "value": "{{networkId}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"transactionId\": \"tx-add-auditors-01\",\n  \"content\": null\n}"
+                }
+              ]
+            },
+            {
+              "name": "network-tree-get-bna",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/bna/network/network-tree/get/:networkId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bna",
+                    "network",
+                    "network-tree",
+                    "get",
+                    ":networkId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId",
+                      "value": "b1df6f65-3bf3-4b1f-8e9b-8ead8813f7af"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"id\": \"node-root\",\n  \"networkId\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n  \"parentId\": null,\n  \"parentCompanyId\": null,\n  \"companyId\": \"company-root\",\n  \"companyName\": \"Company Root\",\n  \"nodeDepth\": 0,\n  \"createdAt\": \"2024-01-10T09:00:00\",\n  \"updatedAt\": \"2024-01-12T10:00:00\",\n  \"children\": [\n    {\n      \"id\": \"node-01\",\n      \"networkId\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n      \"parentId\": \"node-root\",\n      \"parentCompanyId\": \"company-root\",\n      \"companyId\": \"company-01\",\n      \"companyName\": \"Company 1\",\n      \"nodeDepth\": 1,\n      \"createdAt\": \"2024-01-10T09:00:00\",\n      \"updatedAt\": \"2024-01-12T10:00:00\",\n      \"children\": []\n    }\n  ]\n}"
+                }
+              ]
+            },
+            {
+              "name": "network-tree-update-bna",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"updatedTree\": {\n    \"id\": \"node-root\",\n    \"networkId\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n    \"parentId\": null,\n    \"parentCompanyId\": null,\n    \"companyId\": \"company-root\",\n    \"companyName\": \"Company Root\",\n    \"nodeDepth\": 0,\n    \"createdAt\": \"2024-01-10T09:00:00\",\n    \"updatedAt\": \"2024-01-12T10:00:00\",\n    \"children\": [\n      {\n        \"id\": \"node-01\",\n        \"networkId\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n        \"parentId\": \"node-root\",\n        \"parentCompanyId\": \"company-root\",\n        \"companyId\": \"company-01\",\n        \"companyName\": \"Company 1\",\n        \"nodeDepth\": 1,\n        \"createdAt\": \"2024-01-10T09:00:00\",\n        \"updatedAt\": \"2024-01-12T10:00:00\",\n        \"children\": []\n      }\n    ]\n  },\n  \"removed\": [\n    \"node-02\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/bna/network/network-tree/update/:networkId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bna",
+                    "network",
+                    "network-tree",
+                    "update",
+                    ":networkId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId",
+                      "value": "{{networkId}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"transactionId\": \"tx-update-tree-01\",\n  \"content\": {\n    \"id\": \"node-root\",\n    \"networkId\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n    \"parentId\": null,\n    \"parentCompanyId\": null,\n    \"companyId\": \"company-root\",\n    \"companyName\": \"Company Root\",\n    \"nodeDepth\": 0,\n    \"createdAt\": \"2024-01-10T09:00:00\",\n    \"updatedAt\": \"2024-01-12T10:00:00\",\n    \"children\": [\n      {\n        \"id\": \"node-01\",\n        \"networkId\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n        \"parentId\": \"node-root\",\n        \"parentCompanyId\": \"company-root\",\n        \"companyId\": \"company-01\",\n        \"companyName\": \"Company 1\",\n        \"nodeDepth\": 1,\n        \"createdAt\": \"2024-01-10T09:00:00\",\n        \"updatedAt\": \"2024-01-12T10:00:00\",\n        \"children\": []\n      }\n    ]\n  }\n}"
+                }
+              ]
+            },
+            {
+              "name": "get-other-members-bna",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/bna/network/get-other-members/:networkId?page=0&size=10",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bna",
+                    "network",
+                    "get-other-members",
+                    ":networkId"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"content\": [\n    {\n      \"id\": \"node-01\",\n      \"networkId\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n      \"parentId\": \"node-00\",\n      \"parentCompanyId\": \"parent-company\",\n      \"companyId\": \"company-01\",\n      \"companyName\": \"Company 1\",\n      \"nodeDepth\": 2,\n      \"createdAt\": \"2024-01-10T09:00:00\",\n      \"updatedAt\": \"2024-01-12T10:00:00\",\n      \"nodeStatus\": \"FILE_UPLOADED\",\n      \"auditedAt\": \"2024-01-15T10:15:30\",\n      \"uploadFileTransactionId\": \"tx-upload-01\",\n      \"auditFileTransactionId\": \"tx-audit-01\",\n      \"quantity\": 12.5,\n      \"transportationEmission\": 3.2\n    }\n  ],\n  \"pageable\": {\n    \"sort\": {\n      \"empty\": true,\n      \"sorted\": false,\n      \"unsorted\": true\n    },\n    \"offset\": 0,\n    \"pageNumber\": 0,\n    \"pageSize\": 10,\n    \"paged\": true,\n    \"unpaged\": false\n  },\n  \"totalPages\": 1,\n  \"totalElements\": 1,\n  \"last\": true,\n  \"size\": 10,\n  \"number\": 0,\n  \"sort\": {\n    \"empty\": true,\n    \"sorted\": false,\n    \"unsorted\": true\n  },\n  \"numberOfElements\": 1,\n  \"first\": true,\n  \"empty\": false\n}"
+                }
+              ]
+            },
+            {
+              "name": "get-refused-bna",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/bna/network/get-refused/:networkId?page=0&size=10",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bna",
+                    "network",
+                    "get-refused",
+                    ":networkId"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"content\": [\n    {\n      \"id\": \"node-01\",\n      \"networkId\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n      \"parentId\": \"node-00\",\n      \"parentCompanyId\": \"parent-company\",\n      \"companyId\": \"company-01\",\n      \"companyName\": \"Company 1\",\n      \"nodeDepth\": 2,\n      \"createdAt\": \"2024-01-10T09:00:00\",\n      \"updatedAt\": \"2024-01-12T10:00:00\",\n      \"nodeStatus\": \"FILE_UPLOADED\",\n      \"auditedAt\": \"2024-01-15T10:15:30\",\n      \"uploadFileTransactionId\": \"tx-upload-01\",\n      \"auditFileTransactionId\": \"tx-audit-01\",\n      \"quantity\": 12.5,\n      \"transportationEmission\": 3.2\n    }\n  ],\n  \"pageable\": {\n    \"sort\": {\n      \"empty\": true,\n      \"sorted\": false,\n      \"unsorted\": true\n    },\n    \"offset\": 0,\n    \"pageNumber\": 0,\n    \"pageSize\": 10,\n    \"paged\": true,\n    \"unpaged\": false\n  },\n  \"totalPages\": 1,\n  \"totalElements\": 1,\n  \"last\": true,\n  \"size\": 10,\n  \"number\": 0,\n  \"sort\": {\n    \"empty\": true,\n    \"sorted\": false,\n    \"unsorted\": true\n  },\n  \"numberOfElements\": 1,\n  \"first\": true,\n  \"empty\": false\n}"
+                }
+              ]
+            },
+            {
+              "name": "check-name-existence",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/bna/network/check-name-existence/:name",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bna",
+                    "network",
+                    "check-name-existence",
+                    ":name"
+                  ],
+                  "variable": [
+                    {
+                      "key": "name",
+                      "value": "{{networkName}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"exists\": false\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TPA",
+          "item": [
+            {
+              "name": "my-networks-tpa",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/tpa/network/my-networks",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "tpa",
+                    "network",
+                    "my-networks"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"content\": [\n    {\n      \"id\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n      \"networkName\": \"Network 1\",\n      \"membersCount\": 3,\n      \"requestCount\": 1,\n      \"auditedCount\": 1\n    }\n  ],\n  \"pageable\": {\n    \"sort\": {\n      \"empty\": true,\n      \"sorted\": false,\n      \"unsorted\": true\n    },\n    \"offset\": 0,\n    \"pageNumber\": 0,\n    \"pageSize\": 10,\n    \"paged\": true,\n    \"unpaged\": false\n  },\n  \"totalPages\": 1,\n  \"totalElements\": 1,\n  \"last\": true,\n  \"size\": 10,\n  \"number\": 0,\n  \"sort\": {\n    \"empty\": true,\n    \"sorted\": false,\n    \"unsorted\": true\n  },\n  \"numberOfElements\": 1,\n  \"first\": true,\n  \"empty\": false\n}"
+                }
+              ]
+            },
+            {
+              "name": "my-requests-tpa",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/tpa/network/my-requests/:networkId?page=0&size=10",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "tpa",
+                    "network",
+                    "my-requests",
+                    ":networkId"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId",
+                      "value": "4ea5fad5-ed43-42a3-8f15-07b8f810cfe4"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"content\": [\n    {\n      \"id\": \"node-01\",\n      \"companyName\": \"Company 1\",\n      \"nodeDepth\": 2,\n      \"auditFileTransactionId\": \"tx-audit-01\",\n      \"auditedAt\": \"2024-01-15T10:15:30\"\n    }\n  ],\n  \"pageable\": {\n    \"sort\": {\n      \"empty\": true,\n      \"sorted\": false,\n      \"unsorted\": true\n    },\n    \"offset\": 0,\n    \"pageNumber\": 0,\n    \"pageSize\": 10,\n    \"paged\": true,\n    \"unpaged\": false\n  },\n  \"totalPages\": 1,\n  \"totalElements\": 1,\n  \"last\": true,\n  \"size\": 10,\n  \"number\": 0,\n  \"sort\": {\n    \"empty\": true,\n    \"sorted\": false,\n    \"unsorted\": true\n  },\n  \"numberOfElements\": 1,\n  \"first\": true,\n  \"empty\": false\n}"
+                }
+              ]
+            },
+            {
+              "name": "get-other-members-tpa",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/tpa/network/get-other-members/:networkId?page=0&size=10",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "tpa",
+                    "network",
+                    "get-other-members",
+                    ":networkId"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId",
+                      "value": "4ea5fad5-ed43-42a3-8f15-07b8f810cfe4"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"content\": [\n    {\n      \"id\": \"node-01\",\n      \"networkId\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n      \"parentId\": \"node-00\",\n      \"parentCompanyId\": \"parent-company\",\n      \"companyId\": \"company-01\",\n      \"companyName\": \"Company 1\",\n      \"nodeDepth\": 2,\n      \"createdAt\": \"2024-01-10T09:00:00\",\n      \"updatedAt\": \"2024-01-12T10:00:00\",\n      \"nodeStatus\": \"FILE_UPLOADED\",\n      \"auditedAt\": \"2024-01-15T10:15:30\",\n      \"uploadFileTransactionId\": \"tx-upload-01\",\n      \"auditFileTransactionId\": \"tx-audit-01\",\n      \"quantity\": 12.5,\n      \"transportationEmission\": 3.2\n    }\n  ],\n  \"pageable\": {\n    \"sort\": {\n      \"empty\": true,\n      \"sorted\": false,\n      \"unsorted\": true\n    },\n    \"offset\": 0,\n    \"pageNumber\": 0,\n    \"pageSize\": 10,\n    \"paged\": true,\n    \"unpaged\": false\n  },\n  \"totalPages\": 1,\n  \"totalElements\": 1,\n  \"last\": true,\n  \"size\": 10,\n  \"number\": 0,\n  \"sort\": {\n    \"empty\": true,\n    \"sorted\": false,\n    \"unsorted\": true\n  },\n  \"numberOfElements\": 1,\n  \"first\": true,\n  \"empty\": false\n}"
+                }
+              ]
+            },
+            {
+              "name": "details-tpa",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/tpa/network/details/:networkId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "tpa",
+                    "network",
+                    "details",
+                    ":networkId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId",
+                      "value": "{{networkId}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"id\": \"4b47e559-8fd2-48ff-9530-053d1336aeaa\",\n  \"networkName\": \"Network 1\",\n  \"amIAdmin\": false,\n  \"progressPercentage\": null,\n  \"progressEcomputation\": null,\n  \"tokenId\": 1,\n  \"smartContractAddress\": \"0xabcdef1234567890abcdef1234567890abcdef12\",\n  \"lastExport\": null,\n  \"lastCompute\": null,\n  \"lastVersionExport\": null,\n  \"lastVersionCompute\": null,\n  \"myNode\": null\n}"
+                }
+              ]
+            },
+            {
+              "name": "verify-data",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/tpa/network/verify-data/:nodeId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "tpa",
+                    "network",
+                    "verify-data",
+                    ":nodeId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "nodeId",
+                      "value": "840f78ec-5621-4d5f-9686-b2985810f1a2"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"transactionId\": \"tx-audit-01\",\n  \"content\": {\n    \"id\": \"node-01\",\n    \"parentId\": \"node-00\",\n    \"companyId\": \"company-01\",\n    \"scopeFileId\": \"file-scope\",\n    \"scopeFileName\": \"scope_1_2.csv\",\n    \"granularScope1FileId\": \"file-g1\",\n    \"granularScope1FileName\": \"scope_1.csv\",\n    \"granularScope2FileId\": \"file-g2\",\n    \"granularScope2FileName\": \"scope_2.csv\",\n    \"nodeStatus\": \"AUDITED\",\n    \"audited\": true,\n    \"auditedAt\": \"2024-01-15T10:15:30\",\n    \"uploadFileTransactionId\": \"tx-upload-01\",\n    \"auditFileTransactionId\": \"tx-audit-01\",\n    \"scope1\": \"100\",\n    \"scope2\": \"200\",\n    \"totalScope1AndScope2\": \"300\",\n    \"nodeDepth\": 2,\n    \"auditorId\": \"auditor-01\",\n    \"eValue\": 12.5,\n    \"scope3\": 125.0,\n    \"productionVolume\": 10.0\n  }\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "COMMON",
+          "item": [
+            {
+              "name": "node-details",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/common/network/node-details/:nodeId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "common",
+                    "network",
+                    "node-details",
+                    ":nodeId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "nodeId",
+                      "value": "{{nodeId}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"scopeFile\": {\n    \"id\": \"file-scope\",\n    \"name\": \"scope_1_2.csv\",\n    \"uploadTransactionId\": \"tx-upload-01\",\n    \"size\": 12345\n  },\n  \"granularScope1File\": {\n    \"id\": \"file-g1\",\n    \"name\": \"scope_1.csv\",\n    \"uploadTransactionId\": \"tx-upload-01\",\n    \"size\": 2345\n  },\n  \"granularScope2File\": {\n    \"id\": \"file-g2\",\n    \"name\": \"scope_2.csv\",\n    \"uploadTransactionId\": \"tx-upload-01\",\n    \"size\": 3456\n  },\n  \"extractedData\": [\n    {\n      \"metadataKey\": \"TOTAL_CO2\",\n      \"metadataValue\": \"300\",\n      \"unitOfMeasure\": \"kg\"\n    }\n  ]\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "PUBLIC",
+          "item": [
+            {
+              "name": "metadata",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/public/network/metadata/:metadataHash",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "public",
+                    "network",
+                    "metadata",
+                    ":metadataHash"
+                  ],
+                  "variable": [
+                    {
+                      "key": "metadataHash",
+                      "value": "{{metadataHash}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "body": "{\"docId\":\"meta-01\"}"
+                }
+              ]
+            },
+            {
+              "name": "Merjle hash",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"companyId\": \"8e3ed75f-debb-471a-ad59-1136510fddeb\",\r\n  \"companyName\": \"Company 1\",\r\n  \"children\": [\r\n    {\r\n      \"companyId\": \"85cb6957-9f02-424a-ae97-61ff69ff81a8\",\r\n      \"companyName\": \"Company 2\",\r\n      \"children\": []\r\n    },\r\n    {\r\n      \"companyId\": \"560816fd-1960-40dc-9e45-3c9cd4e4a70c\",\r\n      \"companyName\": \"Company 3\",\r\n      \"children\": [\r\n        {\r\n          \"companyId\": \"23ef94bb-e422-4f79-8a1f-7155f21679ce\",\r\n          \"companyName\": \"Company 4\",\r\n          \"children\": []\r\n        },\r\n        {\r\n          \"companyId\": \"462f45db-c5bc-4e3e-bd97-d1a9592910a2\",\r\n          \"companyName\": \"Company 5\",\r\n          \"children\": []\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/public/network/merkle-hash",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "public",
+                    "network",
+                    "merkle-hash"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"hash\": \"0xdeadbeef\"\n}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "File",
+      "item": [
+        {
+          "name": "COMMON",
+          "item": [
+            {
+              "name": "download-file",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/common/file/download/:nodeId/:type",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "common",
+                    "file",
+                    "download",
+                    ":nodeId",
+                    ":type"
+                  ],
+                  "variable": [
+                    {
+                      "key": "nodeId",
+                      "value": "736d0d39-8c3b-4d2f-bff4-0b3b4b9ab032"
+                    },
+                    {
+                      "key": "type",
+                      "value": "GLOBAL_SCOPE_FILE"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/octet-stream"
+                    }
+                  ],
+                  "body": "<binary>"
+                }
+              ]
+            },
+            {
+              "name": "download-all",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/common/file/download/:nodeId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "common",
+                    "file",
+                    "download",
+                    ":nodeId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "nodeId",
+                      "value": "{{nodeId}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/octet-stream"
+                    }
+                  ],
+                  "body": "<binary>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "BU",
+          "item": [
+            {
+              "name": "upload scope files",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "GRANULAR_SCOPE_1",
+                      "type": "file",
+                      "src": "/D:/old_download/sample-report-B-ledger/sample-report-B-ledger/granular_scope_1_data_facts.csv"
+                    },
+                    {
+                      "key": "GRANULAR_SCOPE_2",
+                      "type": "file",
+                      "src": "/D:/old_download/sample-report-B-ledger/sample-report-B-ledger/granular_scope_2_data_facts.csv"
+                    },
+                    {
+                      "key": "GLOBAL_SCOPE_FILE",
+                      "type": "file",
+                      "src": "/D:/old_download/sample-report-B-ledger/sample-report-B-ledger/scope_1_2_data_facts.csv"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/bu/file/upload-scope-files/:networkId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bu",
+                    "file",
+                    "upload-scope-files",
+                    ":networkId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId",
+                      "value": "{{networkId}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"scope1\": \"100\",\n  \"scope2\": \"200\",\n  \"total\": \"300\",\n  \"metadata\": []\n}"
+                }
+              ]
+            },
+            {
+              "name": "confirm-file-data",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/bu/file/confirm-file-data/:networkId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bu",
+                    "file",
+                    "confirm-file-data",
+                    ":networkId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId",
+                      "value": "{{networkId}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"transactionId\": \"tx-upload-01\",\n  \"content\": \"{\\\"scope1\\\":\\\"100\\\",\\\"scope2\\\":\\\"200\\\",\\\"total\\\":\\\"300\\\"}\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "export",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/bu/file/export/:networkId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bu",
+                    "file",
+                    "export",
+                    ":networkId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId",
+                      "value": "{{networkId}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/octet-stream"
+                    }
+                  ],
+                  "body": "<binary>"
+                }
+              ]
+            },
+            {
+              "name": "delete-data",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/bu/file/delete-data/:networkId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bu",
+                    "file",
+                    "delete-data",
+                    ":networkId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId",
+                      "value": "{{networkId}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "body": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tansaction",
+      "item": [
+        {
+          "name": "COMMON",
+          "item": [
+            {
+              "name": "poll-transaction-status",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/common/transaction/poll-status/:transactionId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "common",
+                    "transaction",
+                    "poll-status",
+                    ":transactionId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "transactionId",
+                      "value": "61187d37-7b03-4f62-a1b7-a8dec6245841"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"id\": \"61187d37-7b03-4f62-a1b7-a8dec6245841\",\n  \"createdAt\": \"2024-01-15T10:15:30\",\n  \"updatedAt\": \"2024-01-16T10:15:30\",\n  \"confirmedAt\": \"2024-01-16T10:20:30\",\n  \"transactionType\": \"UPLOAD_FILE\",\n  \"status\": \"CONFIRMED\",\n  \"txHash\": \"0xaaaa...bbbb\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "get-network-transactions",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/common/transaction/get-network-transactions/:networkId?sort=updatedAt,DESC",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "common",
+                    "transaction",
+                    "get-network-transactions",
+                    ":networkId"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "updatedAt,DESC"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "key": "networkId",
+                      "value": "ff85d8b4-f36e-4cdc-a8c6-e3487aba07cd"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"content\": [\n    {\n      \"id\": \"61187d37-7b03-4f62-a1b7-a8dec6245841\",\n      \"createdAt\": \"2024-01-15T10:15:30\",\n      \"updatedAt\": \"2024-01-16T10:15:30\",\n      \"confirmedAt\": \"2024-01-16T10:20:30\",\n      \"transactionType\": \"UPLOAD_FILE\",\n      \"status\": \"CONFIRMED\",\n      \"txHash\": \"0xaaaa...bbbb\"\n    }\n  ],\n  \"pageable\": {\n    \"sort\": {\n      \"empty\": true,\n      \"sorted\": false,\n      \"unsorted\": true\n    },\n    \"offset\": 0,\n    \"pageNumber\": 0,\n    \"pageSize\": 10,\n    \"paged\": true,\n    \"unpaged\": false\n  },\n  \"totalPages\": 1,\n  \"totalElements\": 1,\n  \"last\": true,\n  \"size\": 10,\n  \"number\": 0,\n  \"sort\": {\n    \"empty\": true,\n    \"sorted\": false,\n    \"unsorted\": true\n  },\n  \"numberOfElements\": 1,\n  \"first\": true,\n  \"empty\": false\n}"
+                }
+              ]
+            },
+            {
+              "name": "get-node-transactions",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/common/transaction/get-node-transactions/:nodeId?sort=updatedAt,DESC",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "common",
+                    "transaction",
+                    "get-node-transactions",
+                    ":nodeId"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "updatedAt,DESC"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "key": "nodeId",
+                      "value": "{{nodeId}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Example",
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"content\": [\n    {\n      \"id\": \"61187d37-7b03-4f62-a1b7-a8dec6245841\",\n      \"createdAt\": \"2024-01-15T10:15:30\",\n      \"updatedAt\": \"2024-01-16T10:15:30\",\n      \"confirmedAt\": \"2024-01-16T10:20:30\",\n      \"transactionType\": \"UPLOAD_FILE\",\n      \"status\": \"CONFIRMED\",\n      \"txHash\": \"0xaaaa...bbbb\"\n    }\n  ],\n  \"pageable\": {\n    \"sort\": {\n      \"empty\": true,\n      \"sorted\": false,\n      \"unsorted\": true\n    },\n    \"offset\": 0,\n    \"pageNumber\": 0,\n    \"pageSize\": 10,\n    \"paged\": true,\n    \"unpaged\": false\n  },\n  \"totalPages\": 1,\n  \"totalElements\": 1,\n  \"last\": true,\n  \"size\": 10,\n  \"number\": 0,\n  \"sort\": {\n    \"empty\": true,\n    \"sorted\": false,\n    \"unsorted\": true\n  },\n  \"numberOfElements\": 1,\n  \"first\": true,\n  \"empty\": false\n}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AM",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "bledger",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "bledger",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "COMPANIES_ZIP",
+                  "type": "file",
+                  "src": "/D:/bcreply/bocconi-musa/backend/src/main/resources/defaults/local/company/logos.zip"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/am/add-companies",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "am",
+                "add-companies"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Example",
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"imported\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "password",
+        "value": "blockchainUser99",
+        "type": "string"
+      },
+      {
+        "key": "username",
+        "value": "demo",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "localhost:8081/api/v1"
+    },
+    {
+      "key": "networkId",
+      "value": "4b47e559-8fd2-48ff-9530-053d1336aeaa"
+    },
+    {
+      "key": "nodeId",
+      "value": "736d0d39-8c3b-4d2f-bff4-0b3b4b9ab032"
+    },
+    {
+      "key": "metadataHash",
+      "value": ""
+    },
+    {
+      "key": "networkName",
+      "value": ""
+    }
+  ]
+}

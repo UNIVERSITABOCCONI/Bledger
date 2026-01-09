@@ -1,0 +1,54 @@
+.company-card {
+  gap: 2rem;
+  padding-block: 5.75rem;
+}
+
+.company-card-image {
+  border-radius: 50em;
+  overflow: hidden;
+  max-width: 18.25rem;
+  margin-inline: auto;
+}
+
+.company-wallet-info {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 0.5rem;
+  border-radius: 0.625rem;
+  border: 1px solid var(--Blue-5, #E4E9F1);
+
+  color: #6D6D6D;
+
+  /* inter/regular/p */
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem; /* 150% */
+}
+
+.company-wallet-address {
+  color: var(--CoolGray-90, #21272A);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  cursor: pointer;
+
+  /* inter/regular/tiny */
+  font-family: Inter, sans-serif;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1rem; /* 133.333% */
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}

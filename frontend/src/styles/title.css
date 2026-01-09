@@ -1,0 +1,40 @@
+.title {
+  font-family: var(--font-heading), serif;
+}
+
+/* Varianti dimensione */
+.variant-display { font-size: 4.5rem; line-height: 3.4375rem; }
+.variant-h1 { font-size: 3.5rem; line-height: 3.5rem; }
+.variant-h2 { font-size: 3rem; line-height: 3.5rem; }
+.variant-h3 { font-size: 2.5rem; line-height: 2.0625rem; }
+.variant-h4 { font-size: 2rem; line-height: 3.5rem; }
+.variant-h5 { font-size: 1.5rem; line-height: 1.75rem; }
+.variant-h6 { font-size: 1.25rem; line-height: 1.5625rem; }
+
+/* Varianti peso */
+.weight-regular { font-weight: 400; }
+.weight-medium { font-weight: 500; }
+.weight-semi-bold { font-weight: 600; }
+.weight-bold { font-weight: 700; }
+
+/* Varianti colore */
+.color-blue { color: var(--color-primary); }
+.color-white { color: var(--Bocconi-White); }
+.color-black { color: var(--Bocconi-Black); }
+
+.color-dark-blue { color: #23457C; }
+
+.title-sans {
+  font-family: var(--font-default), serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .variant-display { font-size: 2.25rem; line-height: 1.71875rem; }
+  .variant-h1 { font-size: 1.75rem; line-height: 1.75rem; }
+  .variant-h2 { font-size: 1.5rem; line-height: 1.75rem; }
+  .variant-h3 { font-size: 1.25rem; line-height: 1.03125rem; }
+  .variant-h4 { font-size: 1rem; line-height: 1.75rem; }
+  .variant-h5 { font-size: 0.75rem; line-height: 0.875rem; }
+  .variant-h6 { font-size: 0.625rem; line-height: 0.78125rem; }
+}

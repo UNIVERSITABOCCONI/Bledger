@@ -1,0 +1,62 @@
+.title-h1 {
+  color: var(--Blue-2, #0046AE);
+
+  /* playfair/regular/H1 */
+  font-family: var(--font-heading), serif;
+  font-size: 3.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 3.5rem; /* 100% */
+}
+
+.title-h2 {
+  color: var(--gray-dark, #323232);
+
+  /* playfair/bold/H2 */
+  font-family: var(--font-heading), serif;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3.5rem; /* 116.667% */
+}
+
+.label {
+  color: var(--CoolGray-90, #21272A);
+
+  /* inter/bold/label */
+  font-family: var(--font-default), sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.3125rem; /* 150% */
+}
+
+.title-heading-4 {
+  margin: 0;
+  color: var(--CoolGray-90, #21272A);
+
+  /* Heading/4 */
+  font-family: var(--font-default), sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%; /* 1.65rem */
+}
+
+.title-heading-6 {
+  color: var(--CoolGray-90, #21272A);
+
+  /* inter/bold/H6 */
+  font-family: var(--font-default), sans-serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5625rem; /* 125% */
+}
+
+.ico-checked {
+  height: 18px;
+  width: auto;
+  color: var(--color-success);
+  margin-left: auto;
+}

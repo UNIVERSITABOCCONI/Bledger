@@ -1,0 +1,139 @@
+{
+    "documentInfo": {
+        "documentType": "https://xbrl.org/2021/xbrl-csv",
+        "namespaces": {
+            "country": "https://xbrl.org/2024/iso3166",
+            "iso4217": "http://www.xbrl.org/2003/iso4217",
+            "scheme": "http://standards.iso.org/iso/17442",
+            "utr": "http://www.xbrl.org/2009/utr",
+            "bledger": "http://xbrl.bledger.example.com/taxonomy/bledger/2025-07-15/bledger"
+        },
+        "taxonomy": [
+            "https://b-ledger-taxonomy.s3.eu-north-1.amazonaws.com/bledger-taxonomy/bledger/2025-07-15/bledger_2025-07-15.xsd"
+        ]
+    },
+    "tableTemplates": {
+        "scope_1_granular_report": {
+            "columns": {
+                "name": {
+                    "dimensions": {
+                        "concept": "bledger:MachineName"
+                    }
+                },
+                "category": {},
+                "source_of_emission": {},
+                "unit_of_measure": {},
+                "quantity": {
+                    "decimals": 2,
+                    "dimensions": {
+                        "concept": "bledger:Scope1GranularEmission",
+                        "bledger:Scope1GranularEmissionCategoriesAxis": "$category",
+                        "bledger:Scope1GranularEmissionSourcesAxis": "$source_of_emission",
+                        "unit": "$unit_of_measure"
+                    }
+                }
+            }
+        },
+        "scope_2_granular_report": {
+            "columns": {
+                "name": {
+                    "dimensions": {
+                        "concept": "bledger:MachineName"
+                    }
+                },
+                "category": {},
+                "source_of_emission": {},
+                "unit_of_measure": {},
+                "quantity": {
+                    "decimals": 2,
+                    "dimensions": {
+                        "concept": "bledger:Scope2GranularEmission",
+                        "bledger:Scope2GranularEmissionCategoriesAxis": "$category",
+                        "bledger:Scope2GranularEmissionSourcesAxis": "$source_of_emission",
+                        "unit": "$unit_of_measure"
+                    }
+                }
+            }
+        },
+        "aggregated_scope_1_2_report": {
+            "columns": {
+                "scope_1_stationary_combustion": {
+                    "dimensions": {
+                        "concept": "bledger:StationaryCombustionEmissionScope1Aggregated"
+                    }
+                },
+                "scope_1_mobile_combustion": {
+                    "dimensions": {
+                        "concept": "bledger:MobileCombustionEmissionScope1Aggregated"
+                    }
+                },
+                "scope_1_fugitive_emission": {
+                    "dimensions": {
+                        "concept": "bledger:FugitiveEmissionScope1Aggregated"
+                    }
+                },
+                "scope_1_business_process_emission": {
+                    "dimensions": {
+                        "concept": "bledger:BusinessProcessEmissionScope1Aggregated"
+                    }
+                },
+                "scope_1_other_direct_emission": {
+                    "dimensions": {
+                        "concept": "bledger:OtherDirectEmissionScope1Aggregated"
+                    }
+                },
+                "scope_1_total_emission": {
+                    "dimensions": {
+                        "concept": "bledger:TotalScope1Emission"
+                    }
+                },
+                "scope_2_electricity_emission": {
+                    "dimensions": {
+                        "concept": "bledger:ElectricityEmissionScope2Aggregated"
+                    }
+                },
+                "scope_2_other_energy_emission": {
+                    "dimensions": {
+                        "concept": "bledger:OtherEnergyEmissionScope2Aggregated"
+                    }
+                },
+                "scope_2_total_emission": {
+                    "dimensions": {
+                        "concept": "bledger:TotalScope2Emission"
+                    }
+                },
+                "total_emission": {
+                    "dimensions": {
+                        "concept": "bledger:TotalScope1Scope2Emission"
+                    }
+                }
+            },
+            "decimals": 2,
+            "dimensions": {
+                "unit": "utr:tCO2e"
+            }
+        }
+    },
+    "tables": {
+        "granular_scope_1_data_facts": {
+            "template": "scope_1_granular_report",
+            "url": "granular_scope_1_data_facts.csv"
+        },
+        "granular_scope_2_data_facts": {
+            "template": "scope_2_granular_report",
+            "url": "granular_scope_2_data_facts.csv"
+        },
+        "aggregated_scope_1_2_data_facts": {
+            "template": "aggregated_scope_1_2_report",
+            "url": "scope_1_2_data_facts.csv"
+        }
+    },
+    "dimensions": {
+        "entity": "$businessUnitID",
+        "period": "$reportPeriod"
+    },
+    "parameters": {
+        "businessUnitID": "scheme:TestCode1234",
+        "reportPeriod": "2024-01-01..2025-01-01"
+    }
+}

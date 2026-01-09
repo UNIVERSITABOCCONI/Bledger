@@ -1,0 +1,143 @@
+.file-upload-card-panel {
+  display: flex;
+  padding: 1.875rem 1.26563rem 2.0625rem 1.26563rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 0.5rem;
+  border: 2px dashed var(--Blue-3, #81A6DE);
+  background-color: var(--Bocconi-White, #FFF);
+
+  min-height: 20rem;
+}
+
+.choose-text {
+  text-decoration: underline;
+  cursor: pointer;
+
+  color: var(--Blue-2, #0046AE);
+
+  /* inter/bold/label */
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.3125rem; /* 150% */
+}
+
+.drop-text {
+  color: #4b5563; /* gray-600 */
+  font-size: 0.875rem;
+}
+
+.info-text {
+  font-size: 0.875rem;
+  color: #374151; /* gray-700 */
+}
+
+.guidelines-text {
+  color: #1d4ed8; /* blue-700 */
+  font-weight: 600;
+  text-decoration: underline;
+  font-size: 0.875rem;
+
+  &:hover {
+    background: transparent;
+  }
+}
+
+.hidden-input {
+  display: none;
+}
+
+.file-upload-card-panel-footer {
+  margin-top: auto;
+  text-align: center;
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+.panel.hide-panel {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
+
+.file-selected-card-panel,
+.file-status-card-panel {
+  margin-top: 0;
+  padding: 1.53194rem 1.03406rem 1.68513rem 1.03406rem;
+  border: none;
+  /*height: 100%;*/
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 20rem;
+
+  border-radius: 0.4085rem;
+  background: var(--Grey-2, #F2F4F8);
+
+  color: var(--CoolGray-90, #21272A);
+  text-align: center;
+
+  /* inter/regular/tiny */
+  font-family: var(--font-default), sans-serif;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1rem;
+
+  .semibold,
+  strong {
+    font-weight: 600;
+  }
+}
+
+.file-selected-card-panel {
+  padding: 1.875rem 1.26563rem 2.0625rem 1.26563rem;
+}
+
+.file-selected-card-panel-head {
+  width: 100%;
+}
+
+.file-selected-card-icon,
+.file-status-card-icon,
+.file-upload-card-icon {
+  color: var(--color-primary);
+  height: 2.45113rem;
+  margin-bottom: 1rem;
+  width: auto;
+}
+
+.file-selected-card-panel-footer {
+  margin-top: auto;
+  width: 100%;
+}
+
+.file-status-verify-list {
+  text-align: left;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.4085rem;
+
+  margin: auto 0 0;
+}
+
+.file-status-verify-list-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.12rem;
+
+  /* inter/regular/tiny */
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1rem;
+}

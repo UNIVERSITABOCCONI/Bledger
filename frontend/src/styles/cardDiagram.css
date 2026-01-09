@@ -1,0 +1,88 @@
+.card-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--Bocconi-White, #ffffff);
+  border-radius: 1rem;
+  padding: 1rem 2.5rem;
+  box-shadow: 0 0 30.6px 0 rgba(0, 0, 0, 0.11);
+  border: 2px solid var(--Bocconi-White, #ffffff);;
+  transition: all 0.2s ease-in-out;
+  width: 19.125rem;
+  height: 5rem;
+
+  position: relative;
+  z-index: 2;
+
+  &.is-editing {
+    padding: 1rem;
+  }
+}
+
+.card-diagram:hover,
+.card-diagram.is-focused,
+.card-diagram.is-editing {
+  border-color: var(--color-primary, #0046AE);
+}
+
+.card-diagram.is-editable:hover {
+  cursor: pointer;
+}
+
+.company-name {
+
+  color: var(--Bocconi-Black, #000);
+  text-align: center;
+
+  /* inter/regular/p */
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem; /* 150% */
+}
+
+.icon-button {
+  background: transparent;
+  border: none;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+
+  &.edit {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  color: var(--color-primary, #0046AE);
+
+
+  &.close {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+
+.drag-icon {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  color: var(--color-primary, #0046AE);
+}
+
+.card-dropdown {
+  flex-grow: 1;
+  margin-right: 8px;
+}
+
+.is-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

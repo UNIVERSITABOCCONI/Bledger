@@ -1,0 +1,6 @@
+name,category,source_of_emission,unit_of_measure,quantity
+Es. 1: Rullo trasportatore,bocconi:StationaryCombustion,bocconi:Diesel,utr:l,1000
+Es. 2: Forno essicatore,bocconi:StationaryCombustion,bocconi:Biogas,utr:kg,8550
+Es. 3: Macchina aziendale,bocconi:MobileCombustion,bocconi:Petrol,utr:km,26700
+Es. 4: Muletto,bocconi:MobileCombustion,bocconi:Diesel,utr:l,1200
+Es. 5: Aria condizionata,bocconi:FugitiveEmission,bocconi:Scope1CO2e,utr:gCO2e,3000
